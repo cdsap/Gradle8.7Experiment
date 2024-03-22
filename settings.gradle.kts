@@ -30,6 +30,24 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+plugins {
+    id("com.gradle.enterprise") version "3.16.2"
+    id("com.gradle.common-custom-user-data-gradle-plugin") version "1.13"
+
+}
+
+gradleEnterprise {
+    server = "http://ge.solutions-team.gradle.com"
+    allowUntrustedServer = true
+    buildScan {
+        publishAlways()
+        capture {
+            isTaskInputFiles = true
+        }
+        isUploadInBackground = System.getenv("CI") == null
+    }
+}
+
 rootProject.name = "nowinandroid"
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
