@@ -1,10 +1,10 @@
 import json
 
 # Initial variables and their values
-workers = [2]
+workers = [2, 3, 4]
 gc_gradle = ["-XX:+UseG1GC", "-XX:+UseParallelGC"]
-heap_gradle = ["-Xmx4g", "-Xmx6g"]
-repetitions = 2  # Number of times to repeat each combination
+heap_gradle = ["-Xmx4g", "-Xmx6g", "-Xmx8g", "-Xmx10g"]
+repetitions = 20  # Number of times to repeat each combination
 
 combinations = []
 for worker in workers:
