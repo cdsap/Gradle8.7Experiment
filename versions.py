@@ -1,3 +1,4 @@
+import json
 workers = [2]
 gc_gradle = ["-XX:+UseG1GC", "-XX:+UseParallelGC"]
 heap_gradle = ["-Xmx4g", "-Xmx6g", "-Xmx8g"]
