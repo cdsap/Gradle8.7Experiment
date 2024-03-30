@@ -36,7 +36,7 @@ jobs:
                   echo "org.gradle.workers.max=${{ matrix.WORKERS }}" >> gradle.properties
 
             - name: Build with Gradle
-              run: ./gradlew assembleRelease  -Dscan.tag.W_${{ matrix.WORKERS }}  -Dscan.tag.HK_${{ matrix.HEAP_MOTLIN }} -Dscan.tag.HG_${{ matrix.HEAP_GRADLE }} -Dscan.tag.GG_${{ matrix.GC_GRADLE }} -Dscan.tag.GK_${{ matrix.GC_KOTLIN }}
+              run: ./gradlew assembleRelease  -Dscan.tag.W_${{ matrix.WORKERS }}  -Dscan.tag.HK_${{ matrix.HEAP_KOTLIN }} -Dscan.tag.HG_${{ matrix.HEAP_GRADLE }} -Dscan.tag.GG_${{ matrix.GC_GRADLE }} -Dscan.tag.GK_${{ matrix.GC_KOTLIN }} -Dscan.tag.${{ matrix.REPETITION }}
               env:
                 GRADLE_ENTERPRISE_ACCESS_KEY: ${{ secrets.GE_API_KEY }}
 
