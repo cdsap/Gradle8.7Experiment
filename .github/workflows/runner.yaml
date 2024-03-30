@@ -31,8 +31,7 @@ jobs:
 
             - name: Update Gradle Properties
               run: |
-                  echo "org.gradle.jvmargs=${{ matrix.HEAP_GRADLE }} ${{ matrix.GC_GRADLE }} -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8 -XX:MaxMetaspaceSize=1g" >> gradle.properties
-                  echo "kotlin.daemon.jvmargs=${{ matrix.HEAP_KOTLIN }} ${{ matrix.KC_GRADLE }}" >> gradle.properties
+                  echo "org.gradle.jvmargs=${{ matrix.HEAP_GRADLE }} ${{ matrix.GC_GRADLE }} -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8 -XX:MaxMetaspaceSize=1g -Dkotlin.daemon.jvm.options=${{ matrix.HEAP_KOTLIN }}, ${{ matrix.KC_GRADLE }}" >> gradle.properties
                   echo "org.gradle.workers.max=${{ matrix.WORKERS }}" >> gradle.properties
                   ./gradlew assembleRelease  -Dscan.tag.W_${{ matrix.WORKERS }}  -Dscan.tag.HK_${{ matrix.HEAP_KOTLIN }} -Dscan.tag.HG_${{ matrix.HEAP_GRADLE }} -Dscan.tag.GG_${{ matrix.GC_GRADLE }} -Dscan.tag.GK_${{ matrix.KC_GRADLE }} -Dscan.tag.${{ matrix.REPETITION }}
               env:
