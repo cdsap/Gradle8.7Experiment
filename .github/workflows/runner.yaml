@@ -1,6 +1,7 @@
 name: Dynamic Gradle Build Matrix
 
-on: workflow_dispatch
+on:
+    push:
 
 jobs:
     generate-matrix:
