@@ -11,7 +11,7 @@ jobs:
         steps:
             - id: set-matrix
               run: |
-                  echo "::set-output name=matrix::$(python3 generate_matrix.py)"
+                  echo "::set-output name=matrix::$(python3 versions.py)"
 
     build:
         needs: generate-matrix
