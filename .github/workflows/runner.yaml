@@ -9,6 +9,7 @@ jobs:
         outputs:
             matrix: ${{ steps.set-matrix.outputs.matrix }}
         steps:
+            - uses: actions/checkout@v2
             - id: set-matrix
               run: |
                   echo "::set-output name=matrix::$(python3 versions.py)"
