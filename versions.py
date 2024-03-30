@@ -1,5 +1,5 @@
 import json
-workers = [3]
+workers = [4]
 gc_gradle = ["-XX:+UseG1GC", "-XX:+UseParallelGC"]
 heap_gradle = ["-Xmx4g", "-Xmx6g", "-Xmx8g"]
 heap_kotlin = ["-Xmx4g", "-Xmx6g", "-Xmx8g"]
