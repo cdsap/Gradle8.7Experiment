@@ -1,10 +1,10 @@
 import json
 workers = [4]
-gc_gradle = ["-XX:+UseG1GC"]
-heap_gradle = ["-Xmx4g"]
-heap_kotlin = ["-Xmx4g"]
-kc_gradle = ["-XX:+UseG1GC"]
-repetitions = 1  # Ensure this applies to all combinations
+gc_gradle = ["-XX:+UseG1GC", "-XX:+UseParallelGC"]
+heap_gradle = ["-Xmx4g", "-Xmx6g", "-Xmx8g"]
+heap_kotlin = ["-Xmx4g", "-Xmx6g", "-Xmx8g"]
+kc_gradle = ["-XX:+UseG1GC", "-XX:+UseParallelGC"]
+repetitions = 5  # Ensure this applies to all combinations
 
 combinations = []
 for worker in workers:
