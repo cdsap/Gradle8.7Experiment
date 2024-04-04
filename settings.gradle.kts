@@ -47,7 +47,18 @@ gradleEnterprise {
         isUploadInBackground = System.getenv("CI") == null
     }
 }
+buildCache {
+    local {
+        isEnabled = false
 
+    }
+    remote<HttpBuildCache>{
+        url = uri(System.getenv("CACHE_URL"))
+        isPush = true
+        isAllowInsecureProtocol = true
+
+    }
+}
 rootProject.name = "nowinandroid"
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
