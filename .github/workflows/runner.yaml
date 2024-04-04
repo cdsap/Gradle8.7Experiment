@@ -36,4 +36,5 @@ jobs:
                   ./gradlew assembleRelease  -Dscan.tag.W_${{ matrix.WORKERS }}  -Dscan.tag.HK_${{ matrix.HEAP_KOTLIN }} -Dscan.tag.HG_${{ matrix.HEAP_GRADLE }} -Dscan.tag.GG_${{ matrix.GC_GRADLE }} -Dscan.tag.GK_${{ matrix.KC_GRADLE }} -Dscan.tag.${{ matrix.REPETITION }}
               env:
                 GRADLE_ENTERPRISE_ACCESS_KEY: ${{ secrets.GE_API_KEY }}
+                CACHE_URL: ${{ secrets.CACHE_URL }}
 
